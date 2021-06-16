@@ -61,15 +61,14 @@ void selection_sort(int arr[])
 
 //efficient implementation of bubble sort algorithm:
 void bubble_sort(int arr[])
-{
-    int it = 0;
+{   
     int pos;
     int iterations=0;
     int comparisons=0;
     int flag = 1;
 
 
-    for( it = 0 ; it < SIZE-1 && flag == 1 ; it++ )//outer for loop is for iterations
+    for(int it = 0 ; it < SIZE-1 && flag == 1 ; it++ )//outer for loop is for iterations
     {
         flag = 0;
         iterations++;
@@ -121,8 +120,7 @@ void insertion_sort(int arr[])
 {
     int i;
     int iterations=0;
-    int while_cnt=0;
-
+    
     for( i = 1 ; i < SIZE ; i++ )
     {
         iterations++;
@@ -131,8 +129,7 @@ void insertion_sort(int arr[])
 
 	    while( j >= 0 && key < arr[ j ] )
         {
-            while_cnt++;
-		    arr[ j+1 ] = arr[ j ];//shift ele towards its right
+            arr[ j+1 ] = arr[ j ];//shift ele towards its right
 		    j--;//goto the prev ele
 	    }	
 
@@ -140,8 +137,7 @@ void insertion_sort(int arr[])
 	    arr[ j+1 ] = key;
     }
     printf("no. of iterations are: %d\n", iterations);
-    printf("no. of while_cnt: %d\n", while_cnt);
-
+    
 }
 
 
