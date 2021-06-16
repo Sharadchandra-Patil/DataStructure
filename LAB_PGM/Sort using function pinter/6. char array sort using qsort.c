@@ -7,11 +7,11 @@ int asc(const void *p1, const void *p2);
 int desc(const void *p1, const void *p2);
 int main()
 {
-    char arr[SIZE]={'a','z','p','n','b'};
+    char arr[SIZE];
     
     int (*funptr)(const void *, const void *);
     printf("\nEnter elements of array::\n");
-    //AcceptArray(arr, SIZE);
+    AcceptArray(arr, SIZE);
 
     printf("\n elements of array before sort::\n ");
     DisplayArray(arr, SIZE);
@@ -52,7 +52,7 @@ void AcceptArray(char a[], int size)
     for(index=0; index<size; index++)
     {
         printf("arr[%d]::", index);
-        scanf("%*c%c", &a[index]);
+        scanf("%c%*c", &a[index]);
     }
     return ;
 }

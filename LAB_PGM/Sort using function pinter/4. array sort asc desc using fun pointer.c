@@ -25,7 +25,7 @@ int main()
     printf("\n elements of array after desc sort::\n ");
     DisplayArray(arr, SIZE);
     
-    return;
+    return 0;
 }
 int asc(int n1, int n2)
 {
@@ -60,7 +60,7 @@ void DisplayArray(int *a, int size)
 void Sort(int a[], int (*fp)(int num1, int num2),int size)
 {
     int i,  j, temp;
-    for(i=0; i<size; i++)
+    for(i=0; i<size+1; i++)
     {
         for(j=i+1; j<size; j++)
         {

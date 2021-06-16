@@ -1,21 +1,21 @@
 #include<stdio.h>
 #define SIZE 5
 void AcceptArray(int a[], int size);
-void DisplayArray(int *a, int size);
+int DisplayArray(int *a, int size);
 void Sort(int a[], int size);
 int main()
 {
     int arr[SIZE];
     printf("\nEnter elements of array::\n");
     AcceptArray(arr, SIZE);
-
+    
     printf("\n elements of array before sort::\n ");
     DisplayArray(arr, SIZE);
     Sort(arr, SIZE);
     printf("\n elements of array after sort::\n ");
     DisplayArray(arr, SIZE);
+    return 0;
     
-    return;
 }
 void AcceptArray(int a[], int size)
 {
@@ -27,20 +27,20 @@ void AcceptArray(int a[], int size)
     }
     return ;
 }
-void DisplayArray(int *a, int size)
+int DisplayArray(int *a, int size)
 {
     int index;
     for(index=0; index<size; index++)
     {
         printf("\n a[%d] %d [%u]",index, a[index],&a[index] );
     }
-    return ;
+    return 0;
 }
 
 void Sort(int a[], int size)
 {
     int i,  j, temp;
-    for(i=0; i<size; i++)
+    for(i=0; i<size-1; i++)
     {
         for(j=i+1; j<size; j++)
         {
