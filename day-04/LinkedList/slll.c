@@ -18,11 +18,6 @@ void add_node_at_first_position(int data);
 void add_node_at_specific_position(int pos, int data);
 void display_list(void);
 int count_nodes(void);
-void delete_node_at_first_position(void);
-void delete_node_at_last_position(void);
-void delete_node_at_specific_position(int pos);
-
-
 
 int menu(void)
 {
@@ -78,12 +73,14 @@ int main(void)
                 while( 1 )
                 {
                     //accept position from the user
+                    int val_pos = count_nodes() + 1 ;
+                    printf("\n Valid positions are from 1 to %d ...\n",val_pos);
                     printf("enter the pos: ");
                     scanf("%d", &pos);
 
                     //validate position
                     //pos is valid --> if( pos > 0 && pos <= cnt + 1 )
-                    if( pos > 0 && pos <= count_nodes() + 1 )
+                    if( pos > 0 && pos <= val_pos )
                         break;
                     
                     printf("invalid position !!!\n");
@@ -95,30 +92,12 @@ int main(void)
                 break;
 
             case DELFIRST:
-                delete_node_at_first_position();
                 break;
 
             case DELLAST:
-                delete_node_at_last_position();
                 break;
 
             case DELATPOS:
-                while( 1 )
-                {
-                    //accept position from the user
-                    printf("enter the pos: ");
-                    scanf("%d", &pos);
-
-                    //validate position
-                    //pos is valid --> if( pos > 0 && pos <= cnt )
-                    if( pos > 0 && pos <= count_nodes() )
-                        break;
-                    
-                    printf("invalid position !!!\n");
-
-                }
-
-                delete_node_at_specific_position(pos);
                 break;
 
             case DISP:
@@ -133,7 +112,7 @@ int main(void)
 
 //definitions of linked list functionalities
 
-node_t *create_node(int data)
+node_t * create_node(int data)
 {
     //1. allocate memory dynamically for a node
     node_t *temp = (node_t *)malloc(sizeof(node_t));
@@ -163,9 +142,9 @@ void display_list(void)
         printf("list is: head -> ");
         //traverse the list till last node including it
         while( trav != NULL )
-        {
+        {                      
             printf("%d -> ", trav->data);//visit data part of each node
-            trav = trav->next;//move trav towards it next node
+            trav = trav->next;//move trav towards it next node   
         }
         printf(" null\n");
     }
@@ -269,102 +248,6 @@ void add_node_at_specific_position(int pos, int data)
         trav->next = newnode;
     }
 }
-
-void delete_node_at_first_position(void)
-{
-    //step-1: check list is not empty
-    if( head != NULL )
-    {
-        //step-2: if list contains only one node
-        if( head->next == NULL )
-        {
-            //delete the node and make head as NULL
-            free(head);
-            head = NULL;
-        }
-        else//step-3: if list contains more than one nodes
-        {
-            //store an addr cur first into temp which is to be deleted
-            node_t *temp = head;
-            //attach cur second node to the head
-            head = head->next;
-            //delete the node
-            free(temp);
-
-        }
-
-    }
-    else
-        printf("list is empty !!!\n");
-}
-
-
-void delete_node_at_last_position(void)
-{
-    //step-1: check list is not empty
-    if( head != NULL )
-    {
-        //step-2: if list contains only one node
-        if( head->next == NULL )
-        {
-            //delete the node and make head as NULL
-            free(head);
-            head = NULL;
-        }
-        else//step-3: if list contains more than one nodes
-        {
-            //start traversal from first node
-            node_t *trav = head;
-            //traverse the list till second last node
-            while( trav->next->next != NULL )
-                trav = trav->next;
-            //delete last node
-            free(trav->next);//free(5000);
-            //make next part of cur second last node as NULL
-            trav->next = NULL;
-        }
-    }
-    else
-        printf("list is empty !!!\n");
-}
-
-void delete_node_at_specific_position(int pos)
-{
-    if( pos == 1 )//if pos is the first position
-        delete_node_at_first_position();
-    else if( pos == count_nodes() )//if pos is the last position
-        delete_node_at_last_position();
-    else//if pos is the in between position
-    {
-        int i = 1;
-        //start traversal from first node
-        node_t *trav = head, *temp = NULL;
-        //tarverse the list till (pos-1)th node
-        while( i < pos-1 ){
-            i++;
-            trav = trav->next;
-        }
-        //store an addr of node which is to be deleted into temp
-        temp = trav->next;
-        //store an addr of (pos+1)th node into next part (pos-1)th node
-        trav->next = temp->next;
-        //delete the node
-        free(temp);//free(4000);
-
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

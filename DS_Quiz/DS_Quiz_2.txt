@@ -1,0 +1,98 @@
+1. 
+what is wrong about singly linked list?
+Answers
+1. Singly linked list is a collection of nodes linked together in a sequential way 
+   where each node of singly linked list contains a data field
+2. singly list is an address field which contains the reference of the next node.
+3. Singly linked list can contain multiple data fields but 
+   should contain at least single address field pointing to its connected next node.
+4. None Of Above   //<-- Ans
+
+2. 
+What would be the asymptotic time complexity to add a node at the end of singly linked list, 
+if the pointer is initially pointing to the head of the list?
+Answers
+1. O(1)
+2. O(n)
+3. θ(n)   //<-- Ans
+4. Θ(1)
+
+
+3.
+which statement is True about circular linked list?
+Answers
+1. Entire list can be traversed from any node.
+2. Circular lists are the required data structure when 
+   we want a list to be accessed in a circle or loop.
+3. Despite of being singly circular linked list we can easily traverse to its previous node, 
+   which is not possible in singly linked list.
+4. All of Above  //<-- Ans
+
+
+4.
+ What is the worst case time complexity of inserting a node in a doubly linked list?
+Answers
+1. O(nlogn)
+2. O(logn)
+3. O(n)     //<-- Ans
+4. O(1)
+
+
+5. 
+Which of the following is false about a doubly linked list?
+Answers
+1. We can navigate in both the directions
+2. It requires more space than a singly linked list
+3. The insertion and deletion of a node take a bit longer                check?
+4. Implementing a doubly linked list is easier than singly linked list   //<-- Ans
+
+
+6. 
+Which of the following operations is performed more efficiently by doubly linked list than
+by singly linked list?
+Answers
+1. Deleting a node whose location in given             //<-- Ans   check?
+2. Searching of an unsorted list for a given item
+3. Inverting a node after the node with given location
+4. Traversing a list to process each node
+
+
+7. 
+Which of the following data structure/s requires extra space to store n no. of elements?
+Answers
+1. Array
+2. Structure
+3. LinkedList             //<-- Ans
+4. Union
+
+
+8. 
+What would be the asymptotic time complexity to add a node at the end of a singly linear linked list, 
+if the pointer is initially pointing to the head of the list and another pointer pointing to the tail node?
+Answers
+1. O(1)
+2. O(n)         //<-- Ans
+3. θ (n)   ?what to consider when asympotic time complexity asked (worst or average)  Q.2 and Q.8
+4. θ (1)
+
+
+9. 
+.In a singly circular linked list, insertion of a node at first position requires modification of a?
+Answers
+1. One pointer
+2. Two pointer
+3. Three pointer   //<-- Ans
+4. None
+
+
+
+10. Below one is add_first() functionality code for empty Doubly CircularLinked list. Find the correct statement to replace ????
+	head = newnode;
+	tail = newnode;
+	tail ->next = head;
+	????
+Answers
+1. tail->next->next = tail
+2. head->prev = tail;              //<-- Ans
+3. tail->prev = head;
+4. head->prev = NULL;

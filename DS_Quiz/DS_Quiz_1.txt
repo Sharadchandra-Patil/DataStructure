@@ -1,0 +1,68 @@
+1. _____ algorithm follows divide and conquer strategy.
+Answers
+1. Merge sort    //<--Ans
+2. Insertion sort
+3. Bubble sort
+4. All of the above
+
+2. In_____ sort largest element gets bouble out and then 2nd largest element gets bouble out to get ascending ordered sorted list of elements.
+Answers
+1. Insertion Sort
+2. Selection Sort
+3. Bubble Sort           //<--Ans
+4. None of the above
+
+3. State the following statement is true ro false
+Linear search is rarely used practically because other search algorithms such as the binary search algorithm significantly faster searching comparisons.
+Answers
+1. True    //<--Ans
+2. False
+
+
+4. How Many iterations will it takes to find 38 from an given array using binary search arr = {10,20,38,57,100}.
+Answers
+1. 4
+2. 2
+3. 3
+4. 1    //<--Ans
+
+5. What is the Worst case time complexity of bubble sort?
+Answers
+1. O(n log(n))
+2. O(n n!)
+3. O(n^2)        //<--Ans
+4. Ω(n)
+
+6. What is the average case time complexity of selectoin sort?
+1. O(n n!)
+2. O(n log(n))
+3. Ω(n)
+4. O(n^2)
+
+7. What is the worst case time complexity of Linear search?
+Answers
+1. O(n n!)
+2. O(n log(n))
+3. Ω(n)
+4. O(n)    //<--Ans
+
+8. What is time complexity of Binary search?
+Answers
+1. O( log(n))        //<--Ans
+2. O(n n!)
+3. Ω(n)
+4. O(n)
+
+9. The algorithm which repeatedly breaks down a list into several sublists until each sublist consists of a single element.
+Answers
+1. Selection Sort
+2. Merge Sort             //<--Ans
+3. Bubble Sort
+4. Heap Sort
+
+10. Binary search is commonly known as a --------------- or a ----------------.
+Answers
+1. half-interval search
+2. logarithmic search
+3. Both of the Above             //<--Ans
+4. Fibonacci Search
