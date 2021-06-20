@@ -14,8 +14,8 @@ int partition(int arr[],int start,int end);
 
 int main(void)
 {
-    //int arr[ SIZE ] = { 30, 10, 70, 80, 90, 100, 50, 40, 20, 60 };
-    int arr[ SIZE ] = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+    int arr[ SIZE ] = { 30, 10, 70, 80, 90, 100, 50, 40, 20, 60 };
+    //int arr[ SIZE ] = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
     //int arr[ SIZE ] = { 30, 20, 60, 50,10, 40 };
     printf("bfore sorting : "); 
     display_array_elements(arr);
@@ -170,9 +170,9 @@ int partition(int arr[],int start,int end)
                 SWAP(arr[i],arr[pindex]);
                 pindex++;
             }
-        SWAP(arr[end],pivot);   
-    } 
-
+    }
+   
+    SWAP(arr[pindex],arr[end]);  
     return pindex;       
 }
 

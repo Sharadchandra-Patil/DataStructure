@@ -1,12 +1,13 @@
 #include<stdio.h>
 #include<string.h>
+#include<stdlib.h>
 #define NO 5
 #define LEN 10
 int main()
 {
     //char names[NO][LEN];
     char temp[LEN];
-     char *names[NO]={"sf","fgg","ddd","dd","er"}; // array of char pointer
+     char *names[NO]; // array of char pointer
     // char **name;// pointer to pointer
     int i, j;
 
@@ -15,14 +16,13 @@ int main()
     
  for(i=0; i<NO; i++)
     {
-        char a[10];
-        printf("\n student[%d]", i);
-        gets(a);
-        names[i]=a;
-        printf("\n%s\n",names[i]);
-       // scanf("%s", names[i]);
        
+        printf("\n student[%d]", i);
+        names[i]=(char*)malloc(sizeof(char)*10);
+        gets(names[i]);
+       // scanf("%s", names[i]);  
     }
+    
     printf("\n  students info before sort::\n");
     for(i=0; i<NO; i++)
     {
@@ -33,8 +33,8 @@ int main()
     {
         for(j=i+1;j<NO; j++)
         {
-            //if(strcmp(names[i], names[j])>0) //asc
-            if(strcmp(names[i], names[j])<0)//desc
+            if(strcmp(names[i], names[j])>0) //asc
+            //if(strcmp(names[i], names[j])<0)//desc
             {
                 strcpy(temp, names[i]);
                 strcpy(names[i], names[j]);
@@ -49,6 +49,10 @@ int main()
         printf("\n names[%d] %-10s [%u]",i,  names[i] , &names[i]);
     }
     //printf("\n sizeof names=%d", sizeof(names));
+    for(i=0; i<NO; i++)
+    {
+        free(names[i]);
+    }
     return 0;
 }
 /*
