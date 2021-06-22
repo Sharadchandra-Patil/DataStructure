@@ -4,7 +4,8 @@ void reverse(char str[]);
 
 int main(void)
 {
-    char str[]="s&ha$ra*d";
+    char str[10];
+    gets(str);
     printf("%s\n",str);
     reverse(str);
     return 0;
@@ -37,9 +38,9 @@ void reverse(char str[])
 
     while(start < end)
     {
-        if(!isAlphabet(str[start]))
+        if(! isAlphabet(str[start]))
             start++;
-        else if(!isAlphabet(str[end]))
+        else if(! isAlphabet(str[end]))
             end--;
         else
         {

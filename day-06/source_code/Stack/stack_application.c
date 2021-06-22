@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 #define SIZE 10
 #define true 1
@@ -29,7 +30,8 @@ bool_t is_operand(char ch);
 
 int main(void)
 {
-    char infix[32] = "a*b/c*d/e+f-g+h/i";
+    char infix[32] ;
+    gets(infix[32]);
     char postfix[32] = " ";
 
     printf("infix expression is: %s\n", infix);
@@ -90,7 +92,8 @@ void infix_to_postfix(char *in, char *post)
     }//step-3: repeat above steps till the end of postfix expression
 
     //step-4: pop all remaining elements from the stack one by one and append them into the postfix expression.
-    while( !is_stack_empty(&s)){
+    while( !is_stack_empty(&s))
+    {
         post[ j++ ] = peek_element(&s);
         pop_element(&s);
     }
